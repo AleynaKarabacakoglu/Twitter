@@ -1,0 +1,82 @@
+﻿
+@{
+    Layout = null;
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="~/css/HomeStyle.css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="Favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <title>Twitter</title>
+</head>
+<body>
+    <img src="~/img/twtlogo.PNG" />
+    <div class="card-body" style=" margin-left:27rem;">
+        <div class="form-group row">
+            <div class="col-md-6">
+                <input type="text" id="Username" class="form-control" name="email-address" required autofocus>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6">
+                <input type="password" id="Password" class="form-control" name="password" required>
+            </div>
+        </div>
+        <div>
+            <button type="button" onclick="UserCheck()" class="btn btn-block rounded-pill"
+                    style="color:white; background-color:#1DA1F2; text-align: center; box-shadow: none; width: 50%; border-radius:30px;">
+                Log in
+            </button>
+            <a href="" class="btn btn-link" data-toggle="modal" data-target="#SignUp" style="text-align: center; margin-left:8rem;">
+                Sign up for Twitter
+            </a>
+            <partial name="SignUpPartielView"/>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function UserCheck(){
+        let username = $("#Username").val();
+        let password = $("#Password").val();
+        let userDto = {
+            Password: password,
+            Username: username
+        };
+        $.ajax({
+            type: "POST",
+            url: "/Account/SignInControl",
+            data: userDto,
+            success: function (response) {
+
+                if (response) {
+                    location.href = "/Twitter/Home"
+                    console.log("İşlem Başarılı");
+
+                }
+                else{
+                    alert("Kullanıcı adı ve şifre hatalı.");
+                    location.href = "/Account/Login"
+                }
+            },
+            error: function () {
+            console.log("Hata Oluştu");
+            }
+        });
+    }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

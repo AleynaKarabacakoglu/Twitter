@@ -1,0 +1,89 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>Twitter</title>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-6">
+                <img src="~/img/log.PNG" alt="">
+            </div>
+            <div class="col-6">
+                <img src="~/img/log2.PNG" alt="">
+                <div style="margin-left: 150px;">
+                    <button type="button" class="btn btn-block rounded-pill" data-toggle="modal" data-target="#SignUp"
+                            style="color:white; background-color:#1DA1F2; text-align: center; box-shadow: none; width: 75%;">
+                        Sign Up
+                    </button>
+                    <button type="button" class="btn btn-block rounded-pill" onclick="login()"
+                            style="color:#1DA1F2; background-color:white; text-align: center; box-shadow: none; width: 75%; border-color:#1DA1F2 ;">
+                        Log in
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" style="display: flex;">
+        <a href="">About</a>
+        <a href="">Help Center</a>
+        <a href="">Terms of Service</a>
+        <a href="">Privacy Policy</a>
+        <a href="">Cookie Policy</a>
+        <a href="">How Twitter Ads work</a>
+        <a href="">Blog</a>
+        <a href="">Status</a>
+        <a href="">Careers</a>
+        <a href="">
+            Brand Resources
+        </a>
+        <a href="">Advertising</a>
+        <a href="">Marketing</a>
+        <a href=""> Twitter for Business</a>
+        <a href="">Developers</a>
+        <a href="">Directory</a>
+        <a href=""> Settings</a>
+
+    </div>
+    <a href="" style="margin-left: 0; margin-left:40rem;"> © 2020 Twitter, Inc.</a>
+    <style>
+        a {
+            font-size: 13px;
+            color: #657786;
+            margin-left: 1rem;
+            text-decoration: #657786;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    <partial name="SignUpPartielView"/>
+</body>
+
+</html>
+<script>
+    function login() {
+        location.href = "/Account/SignIn";
+    }
+</script>

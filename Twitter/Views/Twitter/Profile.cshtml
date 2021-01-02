@@ -1,0 +1,512 @@
+﻿@using Common.Dtos;
+@using Microsoft.AspNetCore.Http;
+@model IEnumerable<Common.Dtos.TemplateDto>
+
+@{
+    Layout = null;
+
+}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <script src="https://kit.fontawesome.com/c331e4d652.js" crossorigin="anonymous"></script> -->
+    <script src="https://kit.fontawesome.com/8cd25ea642.js" crossorigin="anonymous"></script>
+    <script src="~/js/Profile.js"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="~/css/HomeStyle.css">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <title>Twitter</title>
+
+</head>
+
+<body>
+
+    <div class="container c ">
+        <div class="row c">
+            <div class=" fixLeftRight col-lg-3  d-none  d-lg-block " style="padding: 0%;">
+                <!-- <div class="col-3 c">         -->
+                <aside class="mdc-drawer " style="background-color: white; width: auto;">
+                    <!-- <div class="mdc-drawer__content"> -->
+                    <nav class="mdc-list home" style="background-color: white;">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mdc-touch-target-wrapper changecolor">
+                                    <a class="mdc-list-item  changecolor" style="border-radius: 100%;" href="#">
+                                        <i class="fab fa-twitter fa-2x " style="color:#1DA1F2 ;" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+
+                            <div class="col-12">
+                                <a class="mdc-list-item rounded-pill changecolor"  href="/Twitter/Home">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <i class="fas fa-home fa-2x" aria-hidden="true"></i>
+                                    <span class="mdc-list-item__text  ml-4 setFont ">Home</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+
+                            <div class="col-12">
+                                <a class="mdc-list-item rounded-pill changecolor" href="#">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <i class="fas fa-hashtag fa-2x" aria-hidden="true"></i>
+                                    <span class="mdc-list-item__text  ml-4 setFont">Explore</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <a class="mdc-list-item rounded-pill changecolor" href="#">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <i class="far fa-bell fa-2x" aria-hidden="true"></i>
+                                    <span class="mdc-list-item__text  ml-4 setFont">Notifications</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <a class="mdc-list-item rounded-pill changecolor" href="#">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <i class="far fa-envelope fa-2x" aria-hidden="true"></i>
+                                    <span class="mdc-list-item__text ml-4 setFont">Messages</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <a class="mdc-list-item rounded-pill changecolor" href="#">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <i class="far fa-bookmark fa-2x" aria-hidden="true"></i>
+                                    <span class="mdc-list-item__text ml-4 setFont">Bookmarks</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <a class="mdc-list-item rounded-pill changecolor" href="#">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <i class="far fa-list-alt fa-2x" aria-hidden="true"></i>
+                                    <span class="mdc-list-item__text ml-4 setFont">Lists</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <a class="mdc-list-item rounded-pill changecolor" href="Profil.html">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <i class="far fa-user fa-2x"></i>
+                                    <span class="mdc-list-item__text  ml-4 setFont">Profile</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <a class="mdc-list-item rounded-pill changecolor" href="#">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <i class="far fa-comment-dots fa-2x"></i>
+                                    <span class="mdc-list-item__text  ml-4 setFont">More</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-block rounded-pill"
+                                        style="color:white; background-color:#1DA1F2; text-align: center; box-shadow: none; width: 75%;">
+                                    Tweet
+                                </button>
+                                </button>
+                            </div>
+                        </div>
+                        </br>
+
+                        <div class="row mt-5 " style="float: inline-start;">
+                            <div class="col-12">
+                                <button class=" btn rounded-pill btn-block" type="button"
+                                        style="color:black; background-color:white; text-align: center; box-shadow: none; border: none;">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <img src="~/img/profil.png" alt="" style="border-radius: 100%;">
+                                        </div>
+                                        <div class="col-8">
+
+                                            <span class="mdc-button__label ml-2"
+                                                  style="float: left; font-size: 15px; font-weight: 700; ">@Context.Session.GetString("MyName")</span>  </br>
+                                                <span class="mdc-button__label ml-2"
+                                                      style="float: left; font-size: 15px; font-weight: 400; color: #BDCCD6;">@Context.Session.GetString("Me")</span>
+                                                </div>
+                                                <div class="col-2" style="text-align: center;">
+                                                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </nav>
+                            <!-- </div> -->
+                        </aside>
+                    </div>
+
+                    <!-- Orta -->
+                    <div class="col-lg-5 col-md-12 d-block " style="padding: 0%;">
+                        
+                        <div class="home">
+                            <div class="card">
+                                <div class="card-body" style="height: 70px; padding-top: 0% ;">
+                                    <div class="row">
+                                        <div class="col-1 mt-3">
+                                            <a class=" changecolor" style="border-radius: 100%; " href="#">
+                                                <i class="fas fa-arrow-left align-items" style="color:#1DA1F2;" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-11" style="padding-top: 0%;">
+                                            <h5><strong style="font-weight: 800;">@Context.Session.GetString("Name")</strong></h5>
+                                            <span style="color:rgb(101, 119, 134);"> 1,478 Tweets</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ortanın 2.si -->
+                      
+
+
+                        <div class="card">
+                            <div>
+                                <img src="~/img/black.jpg" class="responsive" style="height: 10rem;">
+                            </div>
+                            <div class="row">
+                                <div class="orta col-9">
+                                    <a href="profile/index.html">
+                                        <img class="bpj" src="~/img/profil.png">
+                                    </a>
+                                </div>
+                                <div class="col-3 mt-2">
+                                    <button type="button btn-outline-primary" id="flw" onclick="Follow()" class="btn  rounded-pill"
+                                            style="color:#1DA1F2; border:#1DA1F2;  text-align: center; border-width: 1px; border-style: solid; ">
+                                        <strong>Follow</strong>
+                                    </button>
+                                    <button type="button btn-outline-primary" id="flw" onclick="UnFollow()" class="btn  rounded-pill"
+                                            style="color:#1DA1F2; border:#1DA1F2;  text-align: center; border-width: 1px; border-style: solid; ">
+                                        <strong>UnFollow</strong>
+                                    </button>
+
+                                </div>
+                            </div>
+                            <div class="row ml-1" style="margin-top: -20px;">
+                                <div class="col-4">
+                                    <h5><strong style="font-weight: 800;"></strong></h5>
+                                    <span style="color:rgb(101, 119, 134); margin-top: -10rem !important;">@Context.Session.GetString("FriendUserName")</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row ">
+                                    <div class="col-4">
+                                        <a href="" style="color:black ;">
+                                            <strong>198 </strong> Following
+                                        </a>
+                                    </div>
+                                    <div class="col-4" style="margin-left: -3rem;">
+                                        <a href="" style="color:black ;">
+                                            <strong>200 </strong> Followers
+                                        </a>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: space-around ">
+                                    <div>
+                                        <a class="mdc-list-item  changecolor" href="#">
+                                            <h6>Tweets</h6>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a class="mdc-list-item  changecolor" style="" href="#">
+                                            <h6>Tweets & replies</h6>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a class="mdc-list-item  changecolor" style="" href="#">
+                                            <h6>Media</h6>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a class="mdc-list-item  changecolor" style="" href="#">
+                                            <h6>Likes</h6>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <partial name="ProfilePartialView" />
+
+
+                        <!-- Ortanın 8. alanı  Mobile bar -->
+                        <div class="row fixCenter  d-xl-none d-lg-none">
+                            <!-- Burası düzelecek laptopta bu bar gözükmemeli -->
+                            <nav class="navbar navbar-light  " style="background-color: white; width: 100%;">
+
+                                <div class="col-3">
+                                    <button class="mdc-fab mdc-fab--mini" style="box-shadow: none; background-color: white;" aria-label="Favorite">
+                                        <div class="mdc-fab__ripple"></div>
+                                        <span class="fas fa-home fa-2x" style="color: gray;"></span>
+                                    </button>
+                                </div>
+                                <div class="col-3 c">
+                                    <button class="mdc-fab mdc-fab--mini" style="box-shadow: none; background-color: white;" aria-label="Favorite">
+                                        <div class="mdc-fab__ripple"></div>
+                                        <span class="fas fa-hashtag fa-2x" style="color: gray;"></span>
+                                    </button>
+                                </div>
+                                <div class="col-3  c">
+                                    <button class="mdc-fab mdc-fab--mini" style="box-shadow: none; background-color: white;" aria-label="Favorite">
+                                        <div class="mdc-fab__ripple"></div>
+                                        <span class="far fa-bell fa-2x" style="color:gray;"></span>
+                                    </button>
+                                </div>
+                                <div class="col-3  c">
+                                    <button class="mdc-fab mdc-fab--mini" style="box-shadow: none; background-color: white;" aria-label="Favorite">
+                                        <div class="mdc-fab__ripple"></div>
+                                        <span class="far fa-envelope fa-2x" style="color: gray;"></span>
+                                    </button>
+                                </div>
+
+
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Sağ -->
+                    <div class="col-lg-4 d-none d-lg-block fixLeftRight c " style="background-color: white;">
+                        <!-- Sağ 1.Alan -->
+                        <div class="home">
+                            <div class="row ">
+                                <div class="col-12 ">
+                                    <button type="button" onclick="getProfile()" class="btn btn-block rounded-pill wrapper "
+                                            style="color:#F5F8FA; background-color:#F5F8FA; text-align: center;  box-shadow: none;">
+                                        <div class="row ">
+                                            <div class="col-1">
+                                                <i class="fa fa-search" style="color: black;"></i>
+                                            </div>
+                                            <div class="col-11">
+                                                <input class="wrapper" role="button" id="profileSearch" type="text" style="background-color:#F5F8FA; border: none; float: left; "
+                                                       placeholder="Search Twitter" name="search">
+                                            </div>
+                                        </div>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sağ 2.Alan -->
+                        <div class="card mt-2 bg-primary">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <h5><strong>Trends for you</strong> </h5>
+                                    </div>
+                                    <div class="col-2">
+                                        <i class="fas fa-cog" style="color: #1DA1F2;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item" style="background-color: #F5F8FA;">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <span style="font-size: 13px; font-weight: 400; color: #84939F;">Trending in Turkey</span></br>
+                                            <span style="font-size: 19px; font-weight: 700;">#unilerhibritolsun</span></br>
+                                            <span style="font-size: 13px; font-weight: 400; color: #84939F;">70.8K Tweets</span>
+
+                                        </div>
+                                        <div class="col-2">
+                                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item" style="background-color: #F5F8FA ;">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <span style="font-size: 13px; font-weight: 400; color: #84939F;">Celebrities . Trending</span></br>
+                                            <span style="font-size: 19px; font-weight: 700;">#KarabakhisAzerbaijan</span></br>
+                                            <span>Trending with: #Azerbaijan</span></br>
+                                            <span style="font-size: 13px; font-weight: 400; color: #84939F;">5,606 Tweets</span>
+
+                                        </div>
+                                        <div class="col-2">
+                                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item" style="background-color: #F5F8FA;">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <span style="size: 13px; font-weight: 400; color: #84939F;">Trending in Turkey</span></br>
+                                            <span style="size: 19px; font-weight: 700;">#masterchefturkiye</span></br>
+                                            <span style="size: 13px; font-weight: 400; color: #84939F;">6,826 Tweets</span>
+
+                                        </div>
+                                        <div class="col-2">
+                                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item" style="background-color: #F5F8FA;">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <span style="font-size: 13px; font-weight: 400; color: #84939F;">Science .Trending</span></br>
+                                            <span style="font-size: 19px; font-weight: 700;">#Ozan Tufan</span></br>
+                                            <span>Trending with: #atvkapatılsın</span></br>
+                                            <span style="font-size: 13px; font-weight: 400; color: #84939F;">2,3465 Tweets</span>
+
+                                        </div>
+                                        <div class="col-2">
+                                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item" style="background-color: #F5F8FA;">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <a href="" style="text-decoration: none;">Show more</a>
+                                        </div>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <!-- 3.kısım -->
+                        <div class="card mt-2 bg-primary">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h6><strong>You Might Like</strong> </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item" style="background-color: #F5F8FA;">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <img src="~/img/profil.png" alt="" style="border-radius: 100%;">
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="mdc-button__label ml-2" style="float: left; size: 15px; font-weight: 700; ">İsmail abi</span>  </br>
+                                            <span class="mdc-button__label ml-2" style="float: left;">ismailabimm</span>
+                                        </div>
+                                        <div class="col-4" style="text-align: center;">
+                                            <button type="button btn-outline-primary" class="btn  rounded-pill"
+                                                    style="color:#1DA1F2; border:#1DA1F2 ; text-align: center; border-width: 1px; border-style: solid; ">
+                                                <strong>Follow</strong>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item" style="background-color: #F5F8FA;">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <img src="~/img/profil.png" alt="" style="border-radius: 100%;">
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="mdc-button__label ml-2" style="float: left; size: 15px; font-weight: 700; ">Aslı</span>  </br>
+                                            <span class="mdc-button__label ml-2" style="float: left;">aslinurelvan</span>
+                                        </div>
+                                        <div class="col-4" style="text-align: center;">
+                                            <button type="button btn-outline-primary" class="btn  rounded-pill"
+                                                    style="color:#1DA1F2; border:#1DA1F2 ; text-align: center; border-width: 1px; border-style: solid; ">
+                                                <strong>Follow</strong>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item" style="background-color: #F5F8FA;">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <img src="~/img/profil.png" alt="" style="border-radius: 100%;">
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="mdc-button__label ml-2" style="float: left; size: 15px; font-weight: 700; ">Merve</span>  </br>
+                                            <span class="mdc-button__label ml-2" style="float: left;">meeervee</span>
+                                        </div>
+                                        <div class="col-4" style="text-align: center;">
+                                            <button type="button btn-outline-primary" class="btn  rounded-pill"
+                                                    style="color:#1DA1F2; border:#1DA1F2 ; text-align: center; border-width: 1px; border-style: solid; ">
+                                                <strong>Follow</strong>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item" style="background-color: #F5F8FA;">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <a href="" style="text-decoration: none;">Show more</a>
+                                        </div>
+
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+
+                        <!-- 4.kısım -->
+                        <div class="row mt-3 " style="display: flex;">
+                            <div class="ml-4">
+                                <a href="" class="linkFont lnk">Terms</a>
+                            </div>
+                            <div class="ml-4">
+                                <a href="#" class="linkFont lnk">Privacy policy</a>
+                            </div>
+                            <div class="ml-4">
+                                <a href="" class="linkFont lnk">Cookies</a>
+                            </div>
+                            <div class="ml-4">
+                                <a href="" class="linkFont lnk">Ads info</a>
+                            </div>
+                            <div class="ml-4">
+                                <a href="" class="linkFont lnk">More</a>
+                            </div>
+                            <div class="ml-4">
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="row ml-2 mt-1">
+                            <span class="linkFont">
+                                © 2020 Twitter, Inc.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </html>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
+<script>src ="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"</script>
+<script>src ="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"</script>
+ 
+   
+
+
+

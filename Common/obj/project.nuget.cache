@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "mvrGJ1YOlBN5GDFnArlt1MwtqXyLOJNqJ0oCEHfX8cbxjPLCw2OfACPPYwLASa87W+0xa5dkvgPDFh4miLMNzA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\aleyn\\OneDrive\\Masaüstü\\twitter\\Common\\Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aleyn\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

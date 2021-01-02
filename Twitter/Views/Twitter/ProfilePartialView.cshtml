@@ -1,0 +1,63 @@
+﻿@using Common.Dtos;
+@using Microsoft.AspNetCore.Http;
+@*@model Tuple<IEnumerable<Common.Dtos.TemplateDto>, Common.Dtos.ContactDto>*@
+@model IEnumerable<Common.Dtos.TemplateDto>
+
+
+
+@foreach (TemplateDto item in Model)
+{
+    <div class="card mt-1 p-3 pt-3">
+        <div class="row">
+            <div class="col-2">
+                <div>
+                    <img src="~/img/profil.png" alt="" class="ortaresim ml-2 ">
+                </div>
+            </div>
+            <div class="col-8 " style="display: flex;">
+                <a href="#" class="new-link " style="color:black; "><strong>@item.Name </strong></a>
+                <span>
+                    @item.Username
+                    <a href="#" class="new-link" style="color:black; ">@(DateTime.Now.Minute-item.CreatedDate.Minute+"m")</a>
+                </span>
+            </div>
+            <div class="col-2"> <i class="fas fa-chevron-down" style="float: left;"></i></div>
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-11">
+                <img src="./img/post1.jpg" class="responsive" alt="">
+                <span class="spanTextColor">
+                    @item.Text
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-2 text-left ">
+                <button class="mdc-fab mdc-fab--mini" style="box-shadow: none; background-color: white;" aria-label="Favorite">
+                    <div class="mdc-fab__ripple"></div>
+                    <span class="far fa-comment-alt" style="color: black;"><span class="ml-2">2</span></span>
+                </button>
+            </div>
+            <div class="col-2 text-left ">
+                <button class="mdc-fab mdc-fab--mini" style="box-shadow: none; background-color: white;" aria-label="Favorite">
+                    <div class="mdc-fab__ripple"></div>
+                    <span class="fas fa-retweet " style="color: black;"><span class="ml-2" style="font-weight: normal;">@item.RetweetCount</span></span>
+                </button>
+            </div>
+            <div class="col-2 text-left ">
+                <button class="mdc-fab mdc-fab--mini" style="box-shadow: none; background-color: white;" aria-label="Favorite">
+                    <div class="mdc-fab__ripple"></div>
+                    <span class="far fa-heart" style="color: black;"><span class="ml-2">@item.LikeCount</span></span>
+                </button>
+            </div>
+            <div class="col-4 text-left ">
+                <button class="mdc-fab mdc-fab--mini" style="box-shadow: none; background-color: white;" aria-label="Favorite">
+                    <div class="mdc-fab__ripple"></div>
+                    <span class="fas fa-upload" style="color: black;"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+}
